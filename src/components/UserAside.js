@@ -22,7 +22,7 @@ const UserAside = ({
           <img
             className="card-img-top"
             src={
-              `${window.location.origin}/uploads/${profileImageUrl}` ||
+              `https://warbler-server-mm.herokuapp.com/uploads/${profileImageUrl}` ||
               defaultImage
             }
             alt={username}
