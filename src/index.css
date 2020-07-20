@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: #d5d3d3;
+}
+
+.onboarding .container {
+  margin-top: 5rem;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+nav.navbar {
+  background: linear-gradient(to right, teal, #46dd46);
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
+}
+
+nav.navbar img {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+nav.navbar li {
+  margin: 0 1rem;
+  font-weight: bold;
+}
+
+nav.navbar li:hover {
+  text-decoration: underline;
+}
+nav.navbar li a {
+  color: #fff;
+}
+
+.home-hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background: url("./images/home.jpg") center center/cover;
+  color: #fff;
+}
+
+.home-hero .primary-overlay > * {
+  margin: 1rem 0;
+}
+
+.primary-overlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.message-time-line {
+  display: flex;
+
+  justify-content: center;
+  width: 100%;
+}
+.message-list {
+  background-color: #333;
+}
+
+#messages {
+  overflow: scroll;
+  height: 80vh;
+}
+#messages .list-group-item {
+  display: flex;
+  align-items: flex-start;
+
+  margin-bottom: 1px;
+  background-color: #fffeef;
+}
+#messages .list-group-item .message-area {
+  padding-left: 10px;
+}
+#messages:not(.no-hover) .list-group-item:hover {
+  background-color: #fefefe;
+}
+
+.item-img {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-aside {
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  position: fixed;
+}
+
+.full-width {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 10px;
+}
