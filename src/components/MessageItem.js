@@ -17,7 +17,7 @@ const MessageItem = ({
         <img
           className="item-img"
           src={
-            `https://warbler-server-mm.herokuapp.com//uploads/${profileImageUrl}` ||
+            `https://warbler-server-mm.herokuapp.com/uploads/${profileImageUrl}` ||
             defaultImage
           }
           alt={username}
