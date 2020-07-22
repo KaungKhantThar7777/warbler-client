@@ -50,7 +50,7 @@ export const authUser = (path, userData) => {
       localStorage.setItem("jwtToken", token);
       setAuthorizationToken(token);
       const data = await apiCall("get", `/api/users/${_id}`);
-      debugger;
+
       dispatch(setCurrentUser(data.user));
     } catch (err) {
       dispatch(setError(err.message));

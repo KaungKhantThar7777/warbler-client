@@ -17,21 +17,18 @@ const AuthForm = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const path = signup ? "/signup" : "/signin";
-    let data;
+    let data = new FormData();
+    data.set("email", email);
+    data.set("password", password);
+    console.log(signup);
     if (signup) {
-      data = new FormData();
-      data.set("email", email);
-      data.set("password", password);
-      if (signup) {
-        data.set("username", username);
-        if (profileImageUrl) {
-          data.append("file", profileImageUrl);
-        }
+      data.set("username", username);
+      if (profileImageUrl) {
+        data.append("file", profileImageUrl);
       }
-    } else {
-      data = { ...credentials };
     }
-    onAuth(path, credentials)
+
+    onAuth(path, data)
       .then((res) => props.history.push("/"))
       .catch((e) => console.log(e));
   };
