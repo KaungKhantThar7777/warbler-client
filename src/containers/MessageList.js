@@ -34,7 +34,7 @@ const MessageList = ({
 
   let messagesEnd;
   return (
-    <div className="col-sm-9 offset-sm-1 mt-3">
+    <div className="col-sm-9 offset-sm-1 mt-2">
       <div className="offset-1 col-sm-10">
         <ul className="list-group" id="messages">
           {messagesList}

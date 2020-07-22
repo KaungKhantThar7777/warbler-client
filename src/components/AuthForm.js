@@ -17,15 +17,22 @@ const AuthForm = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const path = signup ? "/signup" : "/signin";
-    const data = new FormData();
-    data.set("email", email);
-    data.set("password", password);
-    data.set("username", username);
-    if (profileImageUrl) {
-      data.append("file", profileImageUrl);
+    let data;
+    if (signup) {
+      data = new FormData();
+      data.set("email", email);
+      data.set("password", password);
+      if (signup) {
+        data.set("username", username);
+        if (profileImageUrl) {
+          data.append("file", profileImageUrl);
+        }
+      }
+    } else {
+      data = { ...credentials };
     }
-    onAuth(path, data)
-      .then(() => props.history.push("/"))
+    onAuth(path, credentials)
+      .then((res) => props.history.push("/"))
       .catch((e) => console.log(e));
   };
   const onChange = (e) => {

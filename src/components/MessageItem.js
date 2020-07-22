@@ -11,13 +11,19 @@ const MessageItem = ({
   deleteMessage,
   isCorrectUser,
 }) => {
+  function toBase64(arr) {
+    //arr = new Uint8Array(arr) if it's an ArrayBuffer
+    return btoa(
+      arr.reduce((data, byte) => data + String.fromCharCode(byte), "")
+    );
+  }
   return (
     <div>
       <li className="list-group-item">
         <img
           className="item-img"
           src={
-            `https://warbler-server-mm.herokuapp.com/uploads/${profileImageUrl}` ||
+            `data:image/jpg;base64, ${toBase64(profileImageUrl.data)}` ||
             defaultImage
           }
           alt={username}

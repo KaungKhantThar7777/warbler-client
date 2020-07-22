@@ -21,7 +21,7 @@ code {
 nav.navbar {
   background: linear-gradient(to right, teal, #46dd46);
   font-size: 1.1rem;
-  padding: 1rem 2rem;
+  padding: 0.4rem 2rem;
 }
 
 nav.navbar img {

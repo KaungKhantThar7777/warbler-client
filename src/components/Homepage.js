@@ -1,8 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import MessageTimeline from "./MessageTimeline";
+import { connect } from "react-redux";
+import jwtDecode from "jwt-decode";
+import {
+  setAuthorizationToken,
+  setCurrentUser,
+  getMe,
+} from "../store/actions/auth";
+import { apiCall } from "../services/api";
 
-const Homepage = ({ currentUser }) => {
+const Homepage = ({ currentUser, setCurrentUser }) => {
+  useEffect(() => {
+    const fetchMe = async () => {
+      if (localStorage.jwtToken) {
+        setAuthorizationToken(localStorage.jwtToken);
+        try {
+          const decode = jwtDecode(localStorage.jwtToken);
+          const res = await apiCall("get", `/api/users/${decode._id}`);
+          setCurrentUser(res.user);
+          // store.dispatch(setCurrentUser(decode));
+        } catch (err) {
+          setCurrentUser({});
+        }
+      } else {
+        setAuthorizationToken(false);
+      }
+    };
+    fetchMe();
+    //eslint-disable-next-line
+  }, []);
   if (!currentUser.isAuthenticated) {
     return (
       <div className="home-hero">
@@ -25,4 +52,4 @@ const Homepage = ({ currentUser }) => {
   );
 };
 
-export default Homepage;
+export default connect(null, { getMe, setCurrentUser })(Homepage);

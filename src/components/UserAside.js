@@ -5,33 +5,27 @@ const UserAside = ({
     user: { profileImageUrl, username },
   },
 }) => {
+  function toBase64(arr) {
+    //arr = new Uint8Array(arr) if it's an ArrayBuffer
+    return btoa(
+      arr.reduce((data, byte) => data + String.fromCharCode(byte), "")
+    );
+  }
   return (
-    <div className="col-sm-2 mt-3">
-      {/* 
-      <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-     */}
+    <div className="col-sm-1 mt-3">
       <aside className="user-aside">
-        <div className="card" width="18rem">
-          <img
-            className="card-img-top"
-            src={
-              `https://warbler-server-mm.herokuapp.com/uploads/${profileImageUrl}` ||
-              defaultImage
-            }
-            alt={username}
-            width="200"
-            height="200"
-          />
-          <div className="card-body">
-            <h3 className="card-title text-center">{username}</h3>
-          </div>
+        <img
+          src={
+            profileImageUrl
+              ? `data:image/jpg;base64, ${toBase64(profileImageUrl.data)}`
+              : defaultImage
+          }
+          alt={username}
+          width="150"
+          height="150"
+        />
+        <div>
+          <h3 className="text-center">{username}</h3>
         </div>
       </aside>
     </div>

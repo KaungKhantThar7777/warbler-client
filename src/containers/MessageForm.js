@@ -20,7 +20,7 @@ const MessageForm = ({ errors, postNewMessage, fetchMessages }) => {
       });
   };
   return (
-    <div className="my-3">
+    <div className="mt-2">
       <form onSubmit={handleSubmit} className="form-inline full-width">
         {errors.message && (
           <div className="alert alert-danger">{errors.message}</div>
