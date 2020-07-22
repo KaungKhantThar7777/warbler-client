@@ -33,7 +33,7 @@ const Homepage = ({ currentUser, setCurrentUser }) => {
   if (!currentUser.isAuthenticated) {
     return (
       <div className="home-hero">
-        <div className="primary-overlay">
+        <div className="primary-overlay text-center">
           <h1>What's happening?</h1>
           <h4>New to Warbler</h4>
           <Link to="signup" className="btn btn-primary">

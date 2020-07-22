@@ -39,10 +39,10 @@ const AuthForm = (props) => {
     setCredentials({ ...credentials, [name]: value });
   };
   return (
-    <div className="my-3 row justify-content-md-center text-center">
+    <div className="mt-3 row justify-content-md-center text-center">
       <div className="col-md-6">
-        <form onSubmit={handleSubmit} className="my-3">
-          <h2>{heading}</h2>
+        <form onSubmit={handleSubmit}>
+          <h3>{heading}</h3>
 
           {errors.message && (
             <div className="alert alert-danger">{errors.message}</div>
