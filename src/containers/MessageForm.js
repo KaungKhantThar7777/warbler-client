@@ -33,7 +33,7 @@ const MessageForm = ({ errors, postNewMessage, fetchMessages }) => {
           onChange={onChange}
         />
         <button type="submit" className="btn btn-success right-pull">
-          <i className="fas fa-paper-plane"></i> Send
+          <i className="fas fa-paper-plane"></i>
         </button>
       </form>
     </div>

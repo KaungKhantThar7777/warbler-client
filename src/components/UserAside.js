@@ -12,7 +12,7 @@ const UserAside = ({
     );
   }
   return (
-    <div className="col-sm-1 mt-3">
+    <div className="col-lg-1 mt-3 d-none d-lg-block">
       <aside className="user-aside">
         <img
           style={{ borderRadius: "50%" }}
