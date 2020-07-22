@@ -15,6 +15,7 @@ const UserAside = ({
     <div className="col-sm-1 mt-3">
       <aside className="user-aside">
         <img
+          style={{ borderRadius: "50%" }}
           src={
             profileImageUrl
               ? `data:image/jpg;base64, ${toBase64(profileImageUrl.data)}`
