@@ -24,7 +24,7 @@ const Main = ({ authUser, errors, currentUser }) => {
               {...props}
               signup
               buttonText="Sign me up"
-              heading="Welcome New User"
+              heading="Join Warbler Today"
               onAuth={authUser}
               errors={errors}
             />
